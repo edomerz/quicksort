@@ -1,0 +1,14 @@
+/*
+	quicksort
+*/
+	
+#ifndef __QUICKSORT_H__
+#define __QUICKSORT_H__
+
+#include <stdio.h>
+
+typedef int (*compare)(const void *data1, const void *data2);
+
+void *QuickSort(void *array, , size_t array_length, size_t start, size_t end, compare);
+	
+#endif /* ifndef __QUICKSORT_H__*/

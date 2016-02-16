@@ -1,0 +1,63 @@
+#include <stdlib.h>
+#include <time.h>
+
+#include "quicksort.h"
+
+void *QuickSort(void *array, 
+				element_size, 
+				size_t array_length, 
+				size_t start, 
+				size_t end, 
+				compare)
+{
+	if(start < end)
+	{
+		size_t q = Partition(array, start, end);
+		
+		QuickSort(array, start, q - 1);
+		QuickSort(array, q + 1 , end);
+	}
+}
+
+quicksort(A, s, e) /* inital call with (A, 0, length(A)) */
+{
+	if(p < r)
+	{
+		q = partition(A, s, e);
+		
+		quicksort(A, s, q - 1);
+		quicksort(A, q + 1, e);
+	}
+}
+
+static Partition(void *array, size_t element_size, size_t start, size_t end, compare)
+{
+	size_t arr = (size_t)array;
+	time_t time;
+	size_t i = start - 1;
+	size_t x = 0;
+	srand((unsigned)time(&time));
+	x = rand() % (end - start)
+	x += start;
+	Swap(arr + x, arr + end);
+	i =  start - 1;
+	
+	for(j = s; j < e; ++j)
+	{
+		if(compare(arr + j, arr + x))
+		{
+			i += 1;
+			Swap(arr + i, arr + j);
+		}
+	}
+	swap(i + 1, arr + end);
+	
+	return(i + 1);
+}
+
+static void Swap(size_t address1, size_t address2, size_t element_size)
+{
+	void *tmp = (void*)address1;
+	memmove((void*)address1, (void*)address2, element_size);
+	memmove((void*)address2, tmp, element_size); 
+}
